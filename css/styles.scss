@@ -1,0 +1,146 @@
+@import "colorsandfonts";
+
+* { /* Gælder alt på hele siden */
+  -webkit-box-sizing: border-box; /* -webkit- browserunderstøttelse */
+  box-sizing: border-box; /* Bokse har altid den størrelse man giver uanset om der tilføjes margen mv. */
+}
+
+body {
+  margin: 0; /* Ingen kanter i siden af browser */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Ingen ydre margen fra overskrifter */
+  padding: 0; /* Ingen indre margen fra overskrifter */
+}
+
+ul, ol {
+  margin: 0; /* Ingen ydre margen fra lister */
+  padding: 0; /* Ingen indre margen fra lister */
+  list-style-position: inside; /* List punkter står på linje */
+}
+
+li {
+  margin: 0; /* Ingen ydre margen fra listpunkter */
+}
+
+p {
+  margin: 0; /* Ingen ydre margen fra paragraffer */
+  padding: 0; /* Ingen indre margen fra paragraffer */
+}
+
+/* Sikrer billeder er responsive */
+img {
+  display: block; /* Billeder er et element (laver linjeskift) */
+  max-width: 100%; /* Bredde må maks fylde 100% */
+  height: auto; /* Højden skal tilpasse sig */
+}
+
+nav {
+  list-style: none;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+
+  .burger {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 15px;
+
+  }
+
+  .burger span {
+    background-color: $black;
+    width: 36px;
+    height: 4px;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+    transition: .5s;
+    border-radius: 2px;
+
+    &:nth-child(1) {
+      transform-origin: left;
+    }
+
+    &:nth-child(2) {
+      transform-origin: center;
+    }
+
+    &:nth-child(3) {
+      transform-origin: left;
+    }
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    left: 3px;
+  }
+
+  .burger.active span:nth-child(2) {
+    transform: rotate(315deg);
+    right: 3px;
+    top: 1px;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: scaleX(0);
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      font-family: $FontText;
+      font-weight: 100;
+      font-size: 20px;
+      display: none;
+      letter-spacing: 1pt;
+      border-bottom: {
+        color: $LightGrey;
+        style: solid;
+        width: 0.5px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+          color: $LightGrey;
+        }
+      }
+
+      .fas {
+        font-size: 24px;
+      }
+    }
+
+    li.open {
+      padding: 20px 0;
+      float: none;
+      display: block;
+      color: $black;
+      letter-spacing: 2px;
+      background-color: $white;
+      overflow: visible;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Alt der ændres i tablet stående fra mobil */
+}
+
+@media screen and (min-width: 992px) {
+  /* Alt der ændres i tablet liggende fra mobil og tablet stående */
+}
+
+@media screen and (min-width: 1200px) {
+  /* Alt der ændres i computer fra mobil, tablet stående og tablet liggende */
+}
+
+@media print {
+  /* Alt der gælder for print specifikt */
+}
