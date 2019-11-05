@@ -45,29 +45,36 @@ header {
 
   h1 {
     font-family: $FontHeader;
+
+    a {
+      text-decoration: none;
+      color: $black;
+      cursor: pointer;
+    }
   }
 
   nav {
     list-style: none;
-    text-align: center;
     position: relative;
     z-index: 1000;
+    float: right;
+    margin-right: 40px;
 
     .burger {
       position: absolute;
       cursor: pointer;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .burger span {
       background-color: $black;
-      width: 36px;
-      height: 4px;
+      width: 30px;
+      height: 3px;
       display: block;
       margin-bottom: 8px;
       position: relative;
       transition: .5s;
-      border-radius: 2px;
+      border-radius: 4px;
 
       &:nth-child(1) {
         transform-origin: left;
@@ -84,13 +91,12 @@ header {
 
     .burger.active span:nth-child(1) {
       transform: rotate(45deg);
-      left: 3px;
+      left: 2px;
     }
 
     .burger.active span:nth-child(2) {
       transform: rotate(315deg);
       right: 3px;
-      top: 1px;
     }
 
     .burger.active span:nth-child(3) {
@@ -100,18 +106,22 @@ header {
     ul {
       padding: 0;
       right: -100px;
+      margin-right: 344px;
+      margin-top: 60px;
+      position: absolute;
+      /* Skal kigge på dette, da det ikke fungere som ønsket */
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0 0;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 
       li {
         font-family: $FontText;
         font-weight: 100;
         font-size: 20px;
         display: none;
-        letter-spacing: 1pt;
-        border-bottom: {
-          color: $LightGrey;
-          style: solid;
-          width: 0.5px;
-        }
+        height: 80px;
+
 
         a {
           text-decoration: none;
@@ -128,14 +138,14 @@ header {
       }
 
       li.open {
-        padding: 20px 0;
+        padding: 15px 0 15px 30px;
         float: none;
         display: block;
         color: $black;
         letter-spacing: 2px;
         background-color: $white;
         overflow: visible;
-        width: 100%;
+        width: 300px;
       }
     }
   }
