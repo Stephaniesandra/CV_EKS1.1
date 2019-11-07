@@ -6,8 +6,7 @@
 }
 
 body {
-  margin: 1em; /* Ingen kanter i siden af browser */
-  background-color: orange;
+  margin: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,13 +37,14 @@ img {
 }
 
 header {
-  height: 80px;
+  height: 120px;
   background-color: $white;
-  margin: -1em;
   padding: 1em;
+  margin: -1em;
 
   h1 {
     font-family: $FontHeader;
+    font-size: 20pt;
 
     a {
       text-decoration: none;
@@ -68,10 +68,10 @@ header {
 
     .burger span {
       background-color: $black;
-      width: 30px;
-      height: 3px;
+      width: 25px;
+      height: 2px;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
       position: relative;
       transition: .5s;
       border-radius: 4px;
@@ -91,12 +91,14 @@ header {
 
     .burger.active span:nth-child(1) {
       transform: rotate(45deg);
-      left: 2px;
+      left: 1px;
+      bottom: 1px;
     }
 
     .burger.active span:nth-child(2) {
       transform: rotate(315deg);
       right: 3px;
+      top: 2px;
     }
 
     .burger.active span:nth-child(3) {
@@ -106,8 +108,8 @@ header {
     ul {
       padding: 0;
       right: -100px;
-      margin-right: 344px;
-      margin-top: 60px;
+      margin-right: 404px;
+      margin-top: 40px;
       position: absolute;
       /* Skal kigge på dette, da det ikke fungere som ønsket */
         -webkit-font-smoothing: antialiased;
@@ -116,16 +118,15 @@ header {
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 
       li {
-        font-family: $FontText;
-        font-weight: 100;
+        font-family: $FontHeader;
+        font-weight: 400;
         font-size: 20px;
+        height: 70px;
         display: none;
-        height: 80px;
-
 
         a {
           text-decoration: none;
-          color: $black;
+          color: $white;
 
           &:hover {
             color: $LightGrey;
@@ -138,19 +139,84 @@ header {
       }
 
       li.open {
-        padding: 15px 0 15px 30px;
+        padding: 20px 0 15px 30px;
         float: none;
         display: block;
-        color: $black;
         letter-spacing: 2px;
-        background-color: $white;
         overflow: visible;
-        width: 300px;
+        background-color: $black;
+        width: 324px;
       }
     }
   }
 }
 
+.project-box {
+  padding: 13px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1em;
+
+  .project {
+    width: 100%;
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+    color: $black;
+
+    .project-file {
+      transition: .5s ease;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .details {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+
+      h1 {
+        @include mellemrubrik;
+        font-size: 16px;
+      }
+
+      p {
+        @include mellemrubrik;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.box-toTop {
+  text-align:center;
+  margin-top: 45px;
+
+  .toTop{
+    color: $LightGrey;
+    text-decoration: none;
+    @include brodtekst;
+    font-size: 14px;
+
+    &:hover {
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+
+footer {
+  @include some;
+}
 
 @media screen and (min-width: 768px) {
   /* Alt der ændres i tablet stående fra mobil */
