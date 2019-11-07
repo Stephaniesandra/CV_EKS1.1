@@ -1,5 +1,5 @@
 $FontHeader: aglet-slab, sans-serif;
-$FontText: 'BenchNine', sans-serif;
+$FontText: proxima-nova, sans-serif;
 
 $black: #000;
 $white: #fff;
@@ -9,4 +9,22 @@ $LightGrey: darkgrey;
   font-family: aglet-slab, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+@mixin brodtekst {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin some {
+  font-size: 18px;
+  text-align: right;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+
+  a {
+    color: $black;
+  }
 }
