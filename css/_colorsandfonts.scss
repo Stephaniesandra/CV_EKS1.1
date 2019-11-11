@@ -9,12 +9,30 @@ $LightGrey: darkgrey;
   font-family: aglet-slab, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 24px;
 }
 
 @mixin brodtekst {
   font-family: proxima-nova, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
+  line-height: 2;
+}
+
+@mixin buttonContact {
+  padding: 10px 15px;
+  background-color: darken($LightGrey, 25%);
+  color: $white;
+  font-family: $FontText;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $LightGrey;
+  }
 }
 
 @mixin some {
