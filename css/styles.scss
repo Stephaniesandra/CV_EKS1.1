@@ -1,5 +1,7 @@
 @import "colorsandfonts";
 
+$margin-top: 25px;
+
 * { /* Gælder alt på hele siden */
   -webkit-box-sizing: border-box; /* -webkit- browserunderstøttelse */
   box-sizing: border-box; /* Bokse har altid den størrelse man giver uanset om der tilføjes margen mv. */
@@ -41,6 +43,8 @@ header {
   background-color: $white;
   padding: 1em;
   margin: -1em;
+  width: 100%;
+  position: relative;
 
   h1 {
     font-family: $FontHeader;
@@ -55,15 +59,17 @@ header {
 
   nav {
     list-style: none;
-    position: relative;
+    width: 100%;
     z-index: 1000;
     float: right;
-    margin-right: 40px;
+    position: absolute;
 
     .burger {
-      position: absolute;
+      position: relative;
       cursor: pointer;
       margin-top: 10px;
+      display: block;
+      float: right;
     }
 
     .burger span {
@@ -75,6 +81,7 @@ header {
       position: relative;
       transition: .5s;
       border-radius: 4px;
+      z-index: 1000;
 
       &:nth-child(1) {
         transform-origin: left;
@@ -106,27 +113,23 @@ header {
     }
 
     ul {
-      padding: 0;
-      right: -100px;
-      margin-right: 404px;
-      margin-top: 40px;
-      position: absolute;
-      /* Skal kigge på dette, da det ikke fungere som ønsket */
-        -webkit-font-smoothing: antialiased;
-        transform-origin: 0 0;
-        transform: translate(100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      float: right;
+      padding: 40px 0;
+      width: 100%;
+      text-align: center;
+
 
       li {
         font-family: $FontHeader;
         font-weight: 400;
         font-size: 20px;
-        height: 70px;
+        height: 20vw;
         display: none;
+        width: 100%;
 
         a {
           text-decoration: none;
-          color: $white;
+          color: $black;
 
           &:hover {
             color: $LightGrey;
@@ -139,18 +142,24 @@ header {
       }
 
       li.open {
-        padding: 20px 0 15px 30px;
+        padding: 20px 0;
         float: none;
         display: block;
         letter-spacing: 2px;
         overflow: visible;
-        background-color: $black;
-        width: 324px;
+        background-color: $white;
+        width: 100%;
+      }
+
+      li:nth-of-type(3) {
+        padding-bottom: 100px;
       }
     }
   }
 }
 
+
+/* Index side */
 .project-box {
   padding: 13px 0;
   display: flex;
@@ -214,6 +223,81 @@ header {
 }
 
 
+/* ommig side */
+.about-box {
+  margin-top: $margin-top;
+  background: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  .picture-me {
+    background: url(../images/Stephanie.jpg) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    width: 400px;
+    margin-left: 175px;
+  }
+
+  .text-about-me {
+    @include brodtekst;
+    padding-right: 20px;
+    margin-top: $margin-top * 2;
+  }
+}
+
+
+/* kontaktmig side */
+.contact-box {
+  .contact-h1 {
+    @include mellemrubrik;
+    margin-bottom: 10px;
+  }
+
+  p {
+    @include brodtekst;
+  }
+
+  form {
+    margin-top: 15px;
+
+    input {
+      @include brodtekst;
+      width: 100%;
+      padding: 8px 0 10px 3px;
+      margin: 8px 0;
+      font-size: 12px;
+      border: {
+        color: $LightGrey;
+        width: 1px;
+        style: solid;
+      }
+    }
+
+    textarea {
+      @include brodtekst;
+      width: 100%;
+      height: 100px;
+      margin-top: 8px;
+      font-size: 12px;
+      padding: 8px 0 10px 3px;
+      border: {
+        color: $LightGrey;
+        style: solid;
+      }
+    }
+
+    .contactButton {
+      margin-top: 8px;
+      float: right;
+
+      button {
+        @include buttonContact;
+      }
+    }
+  }
+}
+
+
 footer {
   @include some;
 }
@@ -224,6 +308,27 @@ footer {
 
 @media screen and (min-width: 992px) {
   /* Alt der ændres i tablet liggende fra mobil og tablet stående */
+
+  header {
+    nav {
+      .burger {
+        display: none;
+      }
+
+      ul {
+        text-align: right;
+        padding: 0;
+
+        li {
+          display: inline;
+          padding-left: 3%;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -233,3 +338,4 @@ footer {
 @media print {
   /* Alt der gælder for print specifikt */
 }
+
