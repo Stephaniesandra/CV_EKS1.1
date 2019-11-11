@@ -202,26 +202,6 @@ header {
   }
 }
 
-.box-toTop {
-  text-align:center;
-  margin-top: 45px;
-
-  .toTop{
-    color: $LightGrey;
-    text-decoration: none;
-    @include brodtekst;
-    font-size: 14px;
-
-    &:hover {
-      font-weight: 500;
-    }
-
-    span {
-      font-size: 12px;
-    }
-  }
-}
-
 
 /* ommig side */
 .about-box {
@@ -235,7 +215,7 @@ header {
     background-size: cover;
     height: 500px;
     width: 400px;
-    margin-left: 175px;
+    margin-left: 145px;
   }
 
   .text-about-me {
@@ -298,6 +278,27 @@ header {
 }
 
 
+.box-toTop {
+  text-align:center;
+  margin-top: 45px;
+
+  .toTop{
+    color: $LightGrey;
+    text-decoration: none;
+    @include brodtekst;
+    font-size: 14px;
+
+    &:hover {
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+
 footer {
   @include some;
 }
@@ -308,6 +309,11 @@ footer {
 
 @media screen and (min-width: 992px) {
   /* Alt der ændres i tablet liggende fra mobil og tablet stående */
+
+
+  body {
+    margin: 2em;
+  }
 
   header {
     nav {
@@ -328,6 +334,86 @@ footer {
     }
   }
 
+
+  /* Index side */
+  .project-box {
+    margin: -2em;
+
+    .project {
+      width: 33.33%;
+      position: relative;
+    }
+  }
+
+
+  /* ommig side */
+  .about-box {
+    margin-top: $margin-top * 2;
+    flex-wrap: unset;
+
+    .text-about-me {
+      width: 700px;
+      text-align: left;
+      padding: 0 75px 0 65px;
+      margin-top: 0;
+    }
+  }
+
+
+  /* kontaktmig side */
+  .contact-box {
+    margin-top: $margin-top * 2;
+    margin-left: 200px;
+    margin-right: 200px;
+
+    .contact-h1 {
+      @include mellemrubrik;
+      margin-bottom: 10px;
+    }
+
+    p {
+      @include brodtekst;
+    }
+
+    form {
+      margin-top: 15px;
+
+      input {
+        @include brodtekst;
+        width: 100%;
+        padding: 8px 0 10px 3px;
+        margin: 8px 0;
+        font-size: 12px;
+        border: {
+          color: $LightGrey;
+          width: 1px;
+          style: solid;
+        }
+      }
+
+      textarea {
+        @include brodtekst;
+        width: 100%;
+        height: 100px;
+        margin-top: 8px;
+        font-size: 12px;
+        padding: 8px 0 10px 3px;
+        border: {
+          color: $LightGrey;
+          style: solid;
+        }
+      }
+
+      .contactButton {
+        margin-top: 8px;
+        float: right;
+
+        button {
+          @include buttonContact;
+        }
+      }
+    }
+  }
 
 }
 

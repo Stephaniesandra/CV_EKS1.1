@@ -1,2 +1,356 @@
-*{box-sizing:border-box}body{margin:1em}h1,h2,h3,h4,h5,h6,ol,ul{margin:0;padding:0}ol,ul{list-style-position:inside}li,p{margin:0}p{padding:0}img{display:block;max-width:100%;height:auto}header{height:120px;background-color:#fff;padding:1em;margin:-1em;width:100%;position:relative}header h1{font-family:aglet-slab,sans-serif;font-size:20pt}header h1 a{text-decoration:none;color:#000;cursor:pointer}header nav{list-style:none;width:100%;z-index:1000;float:right;position:absolute}header nav .burger{position:relative;cursor:pointer;margin-top:10px;display:block;float:right}header nav .burger span{background-color:#000;width:25px;height:2px;display:block;margin-bottom:5px;position:relative;-webkit-transition:.5s;transition:.5s;border-radius:4px;z-index:1000}header nav .burger span:first-child{-webkit-transform-origin:left;transform-origin:left}header nav .burger span:nth-child(2){-webkit-transform-origin:center;transform-origin:center}header nav .burger span:nth-child(3){-webkit-transform-origin:left;transform-origin:left}header nav .burger.active span:first-child{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:1px;bottom:1px}header nav .burger.active span:nth-child(2){-webkit-transform:rotate(315deg);transform:rotate(315deg);right:3px;top:2px}header nav .burger.active span:nth-child(3){-webkit-transform:scaleX(0);transform:scaleX(0)}header nav ul{float:right;padding:40px 0;width:100%;text-align:center}header nav ul li{font-family:aglet-slab,sans-serif;font-weight:400;font-size:20px;height:20vw;display:none;width:100%}header nav ul li a{text-decoration:none;color:#000}header nav ul li a:hover{color:#a9a9a9}header nav ul li .fas{font-size:24px}header nav ul li.open{padding:20px 0;float:none;display:block;letter-spacing:2px;overflow:visible;background-color:#fff;width:100%}header nav ul li:nth-of-type(3){padding-bottom:100px}.project-box{padding:13px 0;display:-webkit-box;display:flex;flex-wrap:wrap;margin:-1em}.project-box .project{width:100%;position:relative}.project-box a{text-decoration:none;color:#000}.project-box a .project-file{-webkit-transition:.5s ease;transition:.5s ease;opacity:1}.project-box a .project-file:hover{opacity:.7}.project-box a .details{position:absolute;top:5%;left:5%}.project-box a .details h1{font-size:24px;font-size:16px}.project-box a .details h1,.project-box a .details p{font-family:aglet-slab,sans-serif;font-weight:400;font-style:normal}.project-box a .details p{font-size:24px;font-size:10px}.box-toTop{text-align:center;margin-top:45px}.box-toTop .toTop{color:#a9a9a9;text-decoration:none;font-family:proxima-nova,sans-serif;font-weight:400;font-style:normal;line-height:2;font-size:14px}.box-toTop .toTop:hover{font-weight:500}.box-toTop .toTop span{font-size:12px}.about-box{margin-top:25px;background:none;display:-webkit-box;display:flex;flex-wrap:wrap}.about-box .picture-me{background:url(../images/Stephanie.jpg) no-repeat 50%;background-size:cover;height:500px;width:400px;margin-left:175px}.about-box .text-about-me{font-family:proxima-nova,sans-serif;font-weight:400;font-style:normal;line-height:2;padding-right:20px;margin-top:50px}.contact-box .contact-h1{font-family:aglet-slab,sans-serif;font-weight:400;font-style:normal;font-size:24px;margin-bottom:10px}.contact-box p{font-family:proxima-nova,sans-serif;font-weight:400;font-style:normal;line-height:2}.contact-box form{margin-top:15px}.contact-box form input{margin:8px 0;border:1px solid #a9a9a9}.contact-box form input,.contact-box form textarea{font-family:proxima-nova,sans-serif;font-weight:400;font-style:normal;line-height:2;width:100%;padding:8px 0 10px 3px;font-size:12px}.contact-box form textarea{height:100px;margin-top:8px;border-color:#a9a9a9;border-style:solid}.contact-box form .contactButton{margin-top:8px;float:right}.contact-box form .contactButton button{padding:10px 15px;background-color:#696969;color:#fff;font-family:proxima-nova,sans-serif;font-size:16px;letter-spacing:2px;text-decoration:none;-webkit-transition-duration:.4s;transition-duration:.4s;cursor:pointer}.contact-box form .contactButton button:hover{background-color:#a9a9a9}footer{font-size:18px;text-align:right;margin-top:80px;margin-bottom:40px;letter-spacing:3px}footer a{color:#000}@media screen and (min-width:992px){header nav .burger{display:none}header nav ul{text-align:right;padding:0}header nav ul li{display:inline;padding-left:3%;font-size:16px}}
+@charset "UTF-8";
+* {
+  /* Gælder alt på hele siden */
+  -webkit-box-sizing: border-box;
+  /* -webkit- browserunderstøttelse */
+  box-sizing: border-box;
+  /* Bokse har altid den størrelse man giver uanset om der tilføjes margen mv. */ }
+
+body {
+  margin: 1em; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  /* Ingen ydre margen fra overskrifter */
+  padding: 0;
+  /* Ingen indre margen fra overskrifter */ }
+
+ul, ol {
+  margin: 0;
+  /* Ingen ydre margen fra lister */
+  padding: 0;
+  /* Ingen indre margen fra lister */
+  list-style-position: inside;
+  /* List punkter står på linje */ }
+
+li {
+  margin: 0;
+  /* Ingen ydre margen fra listpunkter */ }
+
+p {
+  margin: 0;
+  /* Ingen ydre margen fra paragraffer */
+  padding: 0;
+  /* Ingen indre margen fra paragraffer */ }
+
+/* Sikrer billeder er responsive */
+img {
+  display: block;
+  /* Billeder er et element (laver linjeskift) */
+  max-width: 100%;
+  /* Bredde må maks fylde 100% */
+  height: auto;
+  /* Højden skal tilpasse sig */ }
+
+header {
+  height: 120px;
+  background-color: #fff;
+  padding: 1em;
+  margin: -1em;
+  width: 100%;
+  position: relative; }
+  header h1 {
+    font-family: aglet-slab, sans-serif;
+    font-size: 20pt; }
+    header h1 a {
+      text-decoration: none;
+      color: #000;
+      cursor: pointer; }
+  header nav {
+    list-style: none;
+    width: 100%;
+    z-index: 1000;
+    float: right;
+    position: absolute; }
+    header nav .burger {
+      position: relative;
+      cursor: pointer;
+      margin-top: 10px;
+      display: block;
+      float: right; }
+    header nav .burger span {
+      background-color: #000;
+      width: 25px;
+      height: 2px;
+      display: block;
+      margin-bottom: 5px;
+      position: relative;
+      transition: .5s;
+      border-radius: 4px;
+      z-index: 1000; }
+      header nav .burger span:nth-child(1) {
+        transform-origin: left; }
+      header nav .burger span:nth-child(2) {
+        transform-origin: center; }
+      header nav .burger span:nth-child(3) {
+        transform-origin: left; }
+    header nav .burger.active span:nth-child(1) {
+      transform: rotate(45deg);
+      left: 1px;
+      bottom: 1px; }
+    header nav .burger.active span:nth-child(2) {
+      transform: rotate(315deg);
+      right: 3px;
+      top: 2px; }
+    header nav .burger.active span:nth-child(3) {
+      transform: scaleX(0); }
+    header nav ul {
+      float: right;
+      padding: 40px 0;
+      width: 100%;
+      text-align: center; }
+      header nav ul li {
+        font-family: aglet-slab, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        height: 20vw;
+        display: none;
+        width: 100%; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #000; }
+          header nav ul li a:hover {
+            color: darkgrey; }
+        header nav ul li .fas {
+          font-size: 24px; }
+      header nav ul li.open {
+        padding: 20px 0;
+        float: none;
+        display: block;
+        letter-spacing: 2px;
+        overflow: visible;
+        background-color: #fff;
+        width: 100%; }
+      header nav ul li:nth-of-type(3) {
+        padding-bottom: 100px; }
+
+/* Index side */
+.project-box {
+  padding: 13px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1em; }
+  .project-box .project {
+    width: 100%;
+    position: relative; }
+  .project-box a {
+    text-decoration: none;
+    color: #000; }
+    .project-box a .project-file {
+      transition: .5s ease;
+      opacity: 1; }
+      .project-box a .project-file:hover {
+        opacity: 0.7; }
+    .project-box a .details {
+      position: absolute;
+      top: 5%;
+      left: 5%; }
+      .project-box a .details h1 {
+        font-family: aglet-slab, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        font-size: 16px; }
+      .project-box a .details p {
+        font-family: aglet-slab, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        font-size: 10px; }
+
+/* ommig side */
+.about-box {
+  margin-top: 25px;
+  background: none;
+  display: flex;
+  flex-wrap: wrap; }
+  .about-box .picture-me {
+    background: url(../images/Stephanie.jpg) no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    width: 400px;
+    margin-left: 145px; }
+  .about-box .text-about-me {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2;
+    padding-right: 20px;
+    margin-top: 50px; }
+
+/* kontaktmig side */
+.contact-box .contact-h1 {
+  font-family: aglet-slab, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  margin-bottom: 10px; }
+.contact-box p {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 2; }
+.contact-box form {
+  margin-top: 15px; }
+  .contact-box form input {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2;
+    width: 100%;
+    padding: 8px 0 10px 3px;
+    margin: 8px 0;
+    font-size: 12px;
+    border-color: darkgrey;
+    border-width: 1px;
+    border-style: solid; }
+  .contact-box form textarea {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2;
+    width: 100%;
+    height: 100px;
+    margin-top: 8px;
+    font-size: 12px;
+    padding: 8px 0 10px 3px;
+    border-color: darkgrey;
+    border-style: solid; }
+  .contact-box form .contactButton {
+    margin-top: 8px;
+    float: right; }
+    .contact-box form .contactButton button {
+      padding: 10px 15px;
+      background-color: dimgray;
+      color: #fff;
+      font-family: proxima-nova, sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      cursor: pointer; }
+      .contact-box form .contactButton button:hover {
+        background-color: darkgrey; }
+
+.box-toTop {
+  text-align: center;
+  margin-top: 45px; }
+  .box-toTop .toTop {
+    color: darkgrey;
+    text-decoration: none;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2;
+    font-size: 14px; }
+    .box-toTop .toTop:hover {
+      font-weight: 500; }
+    .box-toTop .toTop span {
+      font-size: 12px; }
+
+footer {
+  font-size: 18px;
+  text-align: right;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  letter-spacing: 3px; }
+  footer a {
+    color: #000; }
+
+@media screen and (min-width: 768px) {
+  /* Alt der ændres i tablet stående fra mobil */ }
+@media screen and (min-width: 992px) {
+  /* Alt der ændres i tablet liggende fra mobil og tablet stående */
+  body {
+    margin: 2em; }
+
+  header nav .burger {
+    display: none; }
+  header nav ul {
+    text-align: right;
+    padding: 0; }
+    header nav ul li {
+      display: inline;
+      padding-left: 3%;
+      font-size: 16px; }
+
+  /* Index side */
+  .project-box {
+    margin: -2em; }
+    .project-box .project {
+      width: 33.33%;
+      position: relative; }
+
+  /* ommig side */
+  .about-box {
+    margin-top: 50px;
+    flex-wrap: unset; }
+    .about-box .text-about-me {
+      width: 700px;
+      text-align: left;
+      padding: 0 75px 0 65px;
+      margin-top: 0; }
+
+  /* kontaktmig side */
+  .contact-box {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px; }
+    .contact-box .contact-h1 {
+      font-family: aglet-slab, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 24px;
+      margin-bottom: 10px; }
+    .contact-box p {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 2; }
+    .contact-box form {
+      margin-top: 15px; }
+      .contact-box form input {
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2;
+        width: 100%;
+        padding: 8px 0 10px 3px;
+        margin: 8px 0;
+        font-size: 12px;
+        border-color: darkgrey;
+        border-width: 1px;
+        border-style: solid; }
+      .contact-box form textarea {
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 2;
+        width: 100%;
+        height: 100px;
+        margin-top: 8px;
+        font-size: 12px;
+        padding: 8px 0 10px 3px;
+        border-color: darkgrey;
+        border-style: solid; }
+      .contact-box form .contactButton {
+        margin-top: 8px;
+        float: right; }
+        .contact-box form .contactButton button {
+          padding: 10px 15px;
+          background-color: dimgray;
+          color: #fff;
+          font-family: proxima-nova, sans-serif;
+          font-size: 16px;
+          letter-spacing: 2px;
+          text-decoration: none;
+          transition-duration: 0.4s;
+          cursor: pointer; }
+          .contact-box form .contactButton button:hover {
+            background-color: darkgrey; } }
+@media screen and (min-width: 1200px) {
+  /* Alt der ændres i computer fra mobil, tablet stående og tablet liggende */ }
+@media print {
+  /* Alt der gælder for print specifikt */ }
+
 /*# sourceMappingURL=styles.css.map */
