@@ -49,13 +49,6 @@ header {
   margin: -1em;
   width: 100%;
   position: relative; }
-  header h1 {
-    font-family: aglet-slab, sans-serif;
-    font-size: 20pt; }
-    header h1 a {
-      text-decoration: none;
-      color: #000;
-      cursor: pointer; }
   header nav {
     list-style: none;
     width: 100%;
@@ -96,7 +89,7 @@ header {
       transform: scaleX(0); }
     header nav ul {
       float: right;
-      padding: 40px 0;
+      padding: 30px 0;
       width: 100%;
       text-align: center; }
       header nav ul li {
@@ -123,6 +116,14 @@ header {
         width: 100%; }
       header nav ul li:nth-of-type(3) {
         padding-bottom: 100px; }
+    header nav a {
+      text-decoration: none;
+      color: #000;
+      cursor: pointer; }
+      header nav a h1 {
+        font-family: aglet-slab, sans-serif;
+        font-size: 20pt;
+        position: absolute; }
 
 /* Index side */
 .project-box {
@@ -179,58 +180,60 @@ header {
     margin-top: 50px; }
 
 /* kontaktmig side */
-.contact-box .contact-h1 {
-  font-family: aglet-slab, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 24px;
-  margin-bottom: 10px; }
-.contact-box p {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 2; }
-.contact-box form {
-  margin-top: 15px; }
-  .contact-box form input {
+.contact-box {
+  margin-top: 25px; }
+  .contact-box .contact-h1 {
+    font-family: aglet-slab, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    margin-bottom: 10px; }
+  .contact-box p {
     font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
-    line-height: 2;
-    width: 100%;
-    padding: 8px 0 10px 3px;
-    margin: 8px 0;
-    font-size: 12px;
-    border-color: darkgrey;
-    border-width: 1px;
-    border-style: solid; }
-  .contact-box form textarea {
-    font-family: proxima-nova, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 2;
-    width: 100%;
-    height: 100px;
-    margin-top: 8px;
-    font-size: 12px;
-    padding: 8px 0 10px 3px;
-    border-color: darkgrey;
-    border-style: solid; }
-  .contact-box form .contactButton {
-    margin-top: 8px;
-    float: right; }
-    .contact-box form .contactButton button {
-      padding: 10px 15px;
-      background-color: dimgray;
-      color: #fff;
+    line-height: 2; }
+  .contact-box form {
+    margin-top: 15px; }
+    .contact-box form input {
       font-family: proxima-nova, sans-serif;
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-decoration: none;
-      transition-duration: 0.4s;
-      cursor: pointer; }
-      .contact-box form .contactButton button:hover {
-        background-color: darkgrey; }
+      font-weight: 400;
+      font-style: normal;
+      line-height: 2;
+      width: 100%;
+      padding: 8px 0 10px 3px;
+      margin: 8px 0;
+      font-size: 12px;
+      border-color: darkgrey;
+      border-width: 1px;
+      border-style: solid; }
+    .contact-box form textarea {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 2;
+      width: 100%;
+      height: 100px;
+      margin-top: 8px;
+      font-size: 12px;
+      padding: 8px 0 10px 3px;
+      border-color: darkgrey;
+      border-style: solid; }
+    .contact-box form .contactButton {
+      margin-top: 8px;
+      float: right; }
+      .contact-box form .contactButton button {
+        padding: 10px 15px;
+        background-color: dimgray;
+        color: #fff;
+        font-family: proxima-nova, sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        cursor: pointer; }
+        .contact-box form .contactButton button:hover {
+          background-color: darkgrey; }
 
 .box-toTop {
   text-align: center;
