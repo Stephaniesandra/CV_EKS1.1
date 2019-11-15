@@ -9,6 +9,7 @@ $margin-top: 25px;
 
 body {
   margin: 1em;
+  background-color: $white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +40,7 @@ img {
 }
 
 header {
-  height: 120px;
+  height: 100px;
   background-color: $white;
   padding: 1em;
   margin: -1em;
@@ -164,7 +165,6 @@ header {
 
 /* Index side */
 .project-box {
-  padding: 13px 0;
   display: flex;
   flex-wrap: wrap;
   margin: -1em;
@@ -308,6 +308,15 @@ footer {
   @include some;
 }
 
+
+
+/* CV */
+aside {
+  position: sticky;
+  width: 200px;
+  background-color: grey;
+}
+
 @media screen and (min-width: 768px) {
   /* Alt der ændres i tablet stående fra mobil */
 }
@@ -342,6 +351,7 @@ footer {
 
   /* Index side */
   .project-box {
+    padding: 20px 0;
     margin: -2em;
 
     .project {
