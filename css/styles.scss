@@ -10,6 +10,7 @@ $margin-top: 25px;
 body {
   margin: 1em;
   background-color: $white;
+  max-width: 1500px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,8 +47,6 @@ header {
   margin: -1em;
   width: 100%;
   position: relative;
-
-
 
   nav {
     list-style: none;
