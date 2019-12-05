@@ -224,7 +224,19 @@ header {
     @include brodtekst;
     padding-right: 20px;
     margin-top: $margin-top * 2;
+
+    .buttonbox {
+      .button {
+        @include buttonMe;
+        margin-top: $margin-top * 1.5;
+        width: 100%;
+      }
+    }
   }
+}
+
+.buttonweb {
+  display: none;
 }
 
 .kompetence-box {
@@ -333,17 +345,6 @@ footer {
 
 
 
-/* CV */
-aside {
-  position: sticky;
-  width: 200px;
-  background-color: grey;
-}
-
-@media screen and (min-width: 768px) {
-  /* Alt der ændres i tablet stående fra mobil */
-}
-
 @media screen and (min-width: 992px) {
   /* Alt der ændres i tablet liggende fra mobil og tablet stående */
 
@@ -394,6 +395,17 @@ aside {
       text-align: left;
       padding: 0 75px 0 65px;
       margin-top: 0;
+
+      .buttonweb {
+        display: block;
+
+        .button {
+          @include buttonMe;
+          width: 100px;
+          padding: 5px 0;
+          margin-top: 40px;
+        }
+      }
     }
   }
 
@@ -408,6 +420,10 @@ aside {
         padding: 25px 0;
       }
     }
+  }
+
+  .buttonbox {
+    display: none;
   }
 
 
