@@ -1,3 +1,5 @@
-User-agent: *
-Disallow: /fejl404.html
-Dissalow: /kontakt.html
+ErrorDocument 404 / fejl404
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
